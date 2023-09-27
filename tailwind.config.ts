@@ -20,6 +20,19 @@ const config: Config = {
       black: "#000",
       white: "#FFF",
     },
+    screens: {
+      "1xl": { max: "1279px" },
+      "xl": { max: "1199px" },
+
+      "lg": { max: "1023px" },
+
+      "md": { max: "767px" },
+
+      "sm": { max: "639px" },
+    },
+    container: {
+      center: true,
+    },
     fontSize: {
       h1: ["72px", { lineHeight: "120%", fontWeight: 400 }],
       h2: ["64px", { lineHeight: "120%", fontWeight: 400 }],
@@ -34,7 +47,9 @@ const config: Config = {
       small: ["14px", { lineHeight: "160%", fontWeight: 400 }],
     },
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        "card-gradient": "linear-gradient(180deg, #131313 0%, rgba(19, 19, 19, 0.00) 100%)",
+      },
     },
   },
   plugins: [],
