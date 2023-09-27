@@ -5,7 +5,8 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "simple-import-sort"
+    "simple-import-sort",
+    "unused-imports"
   ],
   "extends": [
     "next/core-web-vitals",
@@ -21,12 +22,17 @@
     "sourceType": "module"
   },
   "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "react/no-children-prop": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
   },
   "overrides": [
     {
