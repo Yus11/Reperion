@@ -6,7 +6,7 @@ import { Logo } from "@/icons"
 import { Navigation } from "./fragments"
 
 export const Header: FC = () => (
-  <header className="container flex items-center justify-between py-8">
+  <header className="container flex items-center justify-between py-8 xl:py-10">
     <Link href="/">
       <Logo className="h-[56px] w-[182px]" />
     </Link>
