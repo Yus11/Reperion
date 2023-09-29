@@ -44,4 +44,10 @@
     hover:text-gray-light active:border-black
     active:text-black active:border-b-primary-main
   }
+
+  .input {
+    @apply h-[42px] w-full border-b-2 border-b-gray-main pb-4
+    text-paragraph outline-none placeholder:text-gray-dark-100
+    bg-[transparent]
+  }
 }

@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 
-import { Header } from "@/components"
+import { Footer, Header } from "@/components"
 
 import "./globals.css"
 
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={poppins.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
