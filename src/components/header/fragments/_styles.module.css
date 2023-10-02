@@ -8,7 +8,7 @@
 }
 
 .resources_box {
-  @apply absolute flex w-[165px] origin-top
+  @apply absolute z-20 flex w-[165px] origin-top
   transform flex-col gap-2 scale-0 rounded-md bg-black
   py-4 text-white transition-all
   duration-100 ease-in-out;
