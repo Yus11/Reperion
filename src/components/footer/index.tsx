@@ -11,8 +11,8 @@ export const Footer: FC = () => {
   const pathName = usePathname()
 
   return (
-    <footer className={`pb-[50px] pt-[72px] xl:py-10 ${pathName === "/" ? "bg-white" : "bg-black"}`}>
-      <div className="container">
+    <footer className={pathName === "/" ? "bg-white" : "bg-black"}>
+      <div className="container pb-[50px] lg:pb-10">
         <div className="flex justify-between gap-12 border-b-2 border-b-gray-main pb-[52px] 1xl:flex-col 1xl:gap-8 xl:pb-8">
           <div className="max-w-[700px] 1xl:max-w-full">
             <h1 className={`text-h3 ${pathName === "/" ? "text-primary-main" : "text-primary-light"}`}>
