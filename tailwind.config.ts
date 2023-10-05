@@ -49,6 +49,12 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "card-gradient": "linear-gradient(180deg, #131313 0%, rgba(19, 19, 19, 0.00) 100%)",
+        // Main page backgrounds
+        "threat-landscape": "url('/threat-landscape-bg.png')",
+        "cyber": "url('/cyber-bg.jpg')",
+        "cyber-mobile": "url('/cyber-bg-mobile.jpg')",
+        "counter-drone": "url('/counter-drone.jpg')",
+        "counter-drone-mobile": "url('/counter-drone-mobile.jpg')",
       },
     },
   },

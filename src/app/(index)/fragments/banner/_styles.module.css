@@ -2,7 +2,7 @@
   @apply relative pb-[96px] pt-[148px]
     before:absolute before:inset-0
     before:-top-[120px] before:-z-[1]
-    xl:before:-top-[136px] xl:py-10;
+    xl:before:-top-[136px] lg:py-10;
 }
 
 .hero_banner:before {

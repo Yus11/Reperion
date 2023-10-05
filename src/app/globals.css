@@ -50,4 +50,9 @@
     text-paragraph outline-none placeholder:text-gray-dark-100
     bg-[transparent]
   }
+
+  .adaptive-title {
+    @apply text-h2 font-semibold text-primary-main
+    lg:text-[56px] md:text-[48px]
+  }
 }
