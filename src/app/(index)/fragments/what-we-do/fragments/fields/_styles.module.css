@@ -1,0 +1,27 @@
+.container {
+  @apply relative mt-[64px] flex h-[443px] w-full
+    flex-row-reverse items-start gap-[64px] xl:h-full
+    xl:flex-col xl:gap-6 lg:mt-10;
+}
+
+.field_box {
+  @apply absolute w-[52%] max-w-[700px] border-b-2
+    border-b-gray-light pb-6 xl:static xl:w-full
+    xl:max-w-full;
+}
+
+.field_description {
+  @apply line-clamp-1 text-[20px] font-normal leading-[160%]
+    text-gray-main xl:text-black lg:line-clamp-3 md:text-[16px];
+}
+
+.link_button {
+  @apply flex-none xl:text-primary-main
+  md:max-w-[116px] xl:[&>svg>path]:fill-primary-main
+}
+
+.field_image {
+  @apply invisible absolute left-0 h-full
+  w-[41%] max-w-[578px] opacity-0 transition-opacity
+  duration-200 xl:hidden
+}

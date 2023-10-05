@@ -1,0 +1,10 @@
+.container {
+  @apply relative z-[2] flex justify-between gap-[150px]
+    pb-[96px] pt-[72px] before:absolute before:-left-[150px]
+    before:top-[40px] before:-z-[1] before:h-[645px]
+    before:w-[1150px] before:bg-threat-landscape before:bg-contain before:bg-no-repeat
+    xl:gap-[100px] lg:py-10 lg:gap-8 lg:before:top-[103px]
+    lg:before:h-[343px] lg:before:w-[843px] md:flex-col
+    md:before:left-[64%] md:before:h-[324px]
+    md:before:w-[752px] md:before:-translate-x-[50%];
+}

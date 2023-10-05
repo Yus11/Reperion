@@ -15,7 +15,7 @@ export const Button: FC<IButton> = ({ children, variant, className = "", ...prop
           : variant === "rounded-reverse" || variant === "rounded"
           ? "button-primary w-[334px] rounded-[55px]"
           : variant === "outlined"
-          ? "button-secondary"
+          ? "button-secondary mr-9"
           : "button-primary w-[194px]"
       } ${className}`}
       {...props}
