@@ -56,6 +56,9 @@ const config: Config = {
         "counter-drone": "url('/counter-drone.jpg')",
         "counter-drone-mobile": "url('/counter-drone-mobile.jpg')",
       },
+      transitionProperty: {
+        "max-height": "max-height",
+      },
     },
   },
   plugins: [],

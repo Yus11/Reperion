@@ -1,0 +1,18 @@
+.contact_button {
+  @apply ml-[64px] flex-none rounded-md
+  border-2 border-gray-main px-5 py-[10px]
+  text-paragraph font-semibold
+  hover:border-primary-main hover:text-primary-main
+  xl:justify-end md:hidden;
+}
+
+.mobile_menu_button {
+  @apply ml-8 hidden h-10 w-10 flex-col
+  items-center justify-center xl:z-30
+  xl:flex xl:p-2 md:ml-0;
+}
+
+.mobile_menu_lines {
+  @apply my-[2px] h-[3px] w-[24px] transform
+  bg-[#141515] transition duration-200 ease-in;
+}

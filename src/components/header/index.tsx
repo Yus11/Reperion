@@ -1,15 +1,56 @@
-import React, { FC } from "react"
+import React, { FC, memo, MouseEventHandler, useCallback, useState } from "react"
 import Link from "next/link"
 
 import { Logo } from "@/icons"
+import { useWindowWidth } from "@/utils"
 
+import { useScrollDirection } from "./_utils"
 import { Navigation } from "./fragments"
 
-export const Header: FC = () => (
-  <header className="container flex items-center justify-between py-8 xl:py-10">
-    <Link href="/">
-      <Logo className="h-[56px] w-[182px]" />
-    </Link>
-    <Navigation />
-  </header>
-)
+import styles from "./_styles.module.css"
+
+export const Header: FC = memo(() => {
+  const scrollDirection = useScrollDirection()
+  const windowWidth = useWindowWidth()
+  const [openMenu, setOpenMenu] = useState(false)
+
+  const toggleOpenMenu = useCallback<MouseEventHandler<HTMLButtonElement | HTMLDivElement>>(() => {
+    windowWidth < 1200 && setOpenMenu((prevState) => !prevState)
+  }, [windowWidth])
+
+  return (
+    <header
+      className={`container z-50 bg-white py-8 transition-[top] duration-300 ease-in-out xl:sticky ${
+        scrollDirection === "down" ? "-top-[100%]" : "top-0"
+      } xl:py-10 md:py-5`}
+    >
+      <div className="flex items-center justify-between">
+        <Link href="/" className={openMenu ? "invisible" : "visible"}>
+          <Logo className="h-[56px] w-[182px]" />
+        </Link>
+        {windowWidth > 1199 ? (
+          <div className="flex items-center">
+            <Navigation openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} windowWidth={windowWidth} />
+            <Link href="#" className={styles.contact_button}>
+              Contact Us
+            </Link>
+          </div>
+        ) : (
+          <div className="flex items-center">
+            <Link href="#" className={`${styles.contact_button} ${openMenu ? "invisible" : "visible"}`}>
+              Contact Us
+            </Link>
+            <button className={styles.mobile_menu_button} onClick={toggleOpenMenu} aria-label="Navigation menu button">
+              <span className={`${styles.mobile_menu_lines} ${openMenu ? "translate-y-[7px] rotate-45" : ""}`} />
+              <span className={`${styles.mobile_menu_lines} ${openMenu ? "opacity-0" : "bg-[#141515]"}`} />
+              <span className={`${styles.mobile_menu_lines} ${openMenu ? "-translate-y-[7px] -rotate-45" : ""}`} />
+            </button>
+          </div>
+        )}
+      </div>
+      {windowWidth < 1200 && (
+        <Navigation openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} windowWidth={windowWidth} />
+      )}
+    </header>
+  )
+})
