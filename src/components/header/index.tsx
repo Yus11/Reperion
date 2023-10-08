@@ -1,4 +1,4 @@
-import React, { FC, memo, MouseEventHandler, useCallback, useState } from "react"
+import React, { FC, memo, MouseEventHandler, useCallback, useEffect, useState } from "react"
 import Link from "next/link"
 
 import { Logo } from "@/icons"
@@ -18,12 +18,12 @@ export const Header: FC = memo(() => {
     windowWidth < 1200 && setOpenMenu((prevState) => !prevState)
   }, [windowWidth])
 
+  useEffect(() => {
+    document.body.style.overflow = openMenu && windowWidth < 1200 ? "hidden" : "unset"
+  }, [openMenu, windowWidth])
+
   return (
-    <header
-      className={`container z-50 bg-white py-8 transition-[top] duration-300 ease-in-out xl:sticky ${
-        scrollDirection === "down" ? "-top-[100%]" : "top-0"
-      } xl:py-10 md:py-5`}
-    >
+    <header className={`container ${styles.header} ${scrollDirection === "down" ? "-top-[100%]" : "top-0 bg-white"}`}>
       <div className="flex items-center justify-between">
         <Link href="/" className={openMenu ? "invisible" : "visible"}>
           <Logo className="h-[56px] w-[182px]" />
@@ -49,7 +49,9 @@ export const Header: FC = memo(() => {
         )}
       </div>
       {windowWidth < 1200 && (
-        <Navigation openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} windowWidth={windowWidth} />
+        <div className="hidden xl:block">
+          <Navigation openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} windowWidth={windowWidth} />
+        </div>
       )}
     </header>
   )

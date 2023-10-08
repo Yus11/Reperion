@@ -1,4 +1,4 @@
-.navigation_container {
+.nav_container {
   @apply flex w-full max-w-[576px]
   items-center xl:absolute xl:left-0
   xl:w-full xl:max-w-full xl:flex-col
@@ -20,7 +20,8 @@
 .navigation_links {
   @apply flex text-paragraph font-semibold
   hover:text-primary-main xl:border-b-[1px]
-  xl:border-b-gray-main xl:pb-3 xl:text-[20px];
+  xl:border-b-gray-main xl:pb-3 xl:text-[20px]
+  md:hover:text-black;
 }
 
 .resources_box {

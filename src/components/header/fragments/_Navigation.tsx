@@ -1,5 +1,5 @@
 "use client"
-import React, { FC, MouseEventHandler, useCallback, useEffect } from "react"
+import React, { FC, MouseEventHandler, useCallback } from "react"
 import Link from "next/link"
 
 import { Button } from "@/components"
@@ -21,13 +21,9 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
     [windowWidth]
   )
 
-  useEffect(() => {
-    document.body.style.overflow = openMenu && windowWidth < 1200 ? "hidden" : "unset"
-  }, [openMenu, windowWidth])
-
   return (
     <div
-      className={`${styles.navigation_container} ${openMenu ? "xl:h-[100vh] xl:max-h-[100vh]" : "xl:max-h-0"}`}
+      className={`${styles.nav_container} ${openMenu ? "xl:h-[100vh] xl:max-h-[100vh]" : "xl:max-h-0"}`}
       onClick={toggleOpenMenu}
     >
       <nav aria-label="Header navigation" className={styles.navigation} onClick={(event) => event.stopPropagation()}>

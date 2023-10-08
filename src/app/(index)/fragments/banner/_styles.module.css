@@ -1,18 +1,19 @@
 .hero_banner {
   @apply relative pb-[96px] pt-[148px]
     before:absolute before:inset-0
-    before:-top-[120px] before:-z-[1]
-    xl:before:-top-[136px] lg:py-10;
-}
-
-.hero_banner:before {
-    opacity: 0.24;
-    background: url('/hero-banner-bg.gif') top center no-repeat, lightgray -30.222px -66.921px / 103.148% 106.196% no-repeat;
-    background-size: cover;
+    before:-top-[120px] before:-z-[1] xl:overflow-hidden
+    xl:before:-top-[136px] xl:flex xl:flex-col xl:items-center lg:py-10;
 }
 
 .article_news {
   @apply w-[49%] bg-white p-10 md:w-full;
     background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
     box-shadow: 0 -2px 21px 0 rgba(0, 0, 0, 0.08);
+}
+
+.video {
+    @apply absolute -top-[140px] -z-[1] min-h-fit w-auto
+    opacity-[.24] min-w-full max-w-full
+    1xl:-top-[120px] xl:max-w-none
+    lg:-top-[119px]
 }

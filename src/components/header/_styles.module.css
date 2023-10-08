@@ -1,3 +1,9 @@
+.header {
+  @apply z-50 py-8 transition-[top]
+  duration-300 ease-in-out xl:sticky
+  xl:py-10 md:py-5
+}
+
 .contact_button {
   @apply ml-[64px] flex-none rounded-md
   border-2 border-gray-main px-5 py-[10px]
