@@ -15,7 +15,7 @@ export const Footer: FC = () => {
       <div className="container pb-[50px] lg:pb-10">
         <div className="flex justify-between gap-12 border-b-2 border-b-gray-main pb-[52px] 1xl:flex-col 1xl:gap-8 xl:pb-8">
           <div className="max-w-[700px] 1xl:max-w-full">
-            <h1 className={`text-h3 ${pathName === "/" ? "text-primary-main" : "text-primary-light"}`}>
+            <h1 className={`text-h3 ${pathName === "/" ? "text-primary-main" : "text-primary-light"} md:break-words`}>
               Pioneering the next generation{" "}
               <span className={`block font-semibold ${pathName === "/" ? "text-black" : "text-white"}`}>
                 of operational resilience

@@ -48,13 +48,32 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
+        // ----- Main page sections backgrounds ----- //
+        // <Hero> section's card background
         "card-gradient": "linear-gradient(180deg, #131313 0%, rgba(19, 19, 19, 0.00) 100%)",
-        // Main page backgrounds
+        // <Threat landscape> section background
         "threat-landscape": "url('/threat-landscape-bg.png')",
+        // <What we do> section cards background
         "cyber": "url('/cyber-bg.jpg')",
         "cyber-mobile": "url('/cyber-bg-mobile.jpg')",
         "counter-drone": "url('/counter-drone.jpg')",
         "counter-drone-mobile": "url('/counter-drone-mobile.jpg')",
+        // <Partnerships & collaborators> section card's background
+        "imperial-college-default": "url('/imperial-college-default.png')",
+        "imperial-college-active": "url('/imperial-college-active.png')",
+        "bristol-university-default": "url('/bristol-university-default.png')",
+        "bristol-university-active": "url('/bristol-university-active.png')",
+        "nus-university-default": "url('/nus-university-default.png')",
+        "nus-university-active": "url('/nus-university-active.png')",
+        "sutd-university-default": "url('/sutd-university-default.png')",
+        "sutd-university-active": "url('/sutd-university-active.png')",
+        "adsc-default": "url('/adsc-default.png')",
+        "adsc-active": "url('/adsc-active.png')",
+        "cy-lab-default": "url('/cy-lab-default.png')",
+        "cy-lab-active": "url('/cy-lab-active.png')",
+        // <Industries> sections background
+        "industries-gradient": "linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.71) 100%)",
+        "industries-tablet-gradient": "linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.71) 100%)",
       },
       transitionProperty: {
         "max-height": "max-height",

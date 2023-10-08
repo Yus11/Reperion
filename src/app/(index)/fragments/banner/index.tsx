@@ -3,6 +3,7 @@ import React, { FC } from "react"
 import { Button } from "@/components"
 
 import styles from "./_styles.module.css"
+
 export const Banner: FC = () => (
   <section className={styles.hero_banner}>
     <div className="container z-[2] flex flex-col items-center py-0">
@@ -46,5 +47,8 @@ export const Banner: FC = () => (
         </div>
       </div>
     </div>
+    <video className={styles.video} autoPlay muted loop>
+      <source src="/main-page-banner-bg.mp4" type="video/mp4" />
+    </video>
   </section>
 )
