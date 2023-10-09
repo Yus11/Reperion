@@ -1,4 +1,13 @@
-import { Banner, Industries, Partnerships, ThreatLandscape, WhatWeDo, WhyReperion } from "./fragments"
+import {
+  Banner,
+  Industries,
+  OurProducts,
+  Partnerships,
+  ReperionTeam,
+  ThreatLandscape,
+  WhatWeDo,
+  WhyReperion,
+} from "./fragments"
 
 export default function Home() {
   return (
@@ -9,6 +18,8 @@ export default function Home() {
       <WhyReperion />
       <Partnerships />
       <Industries />
+      <OurProducts />
+      <ReperionTeam />
     </main>
   )
 }
