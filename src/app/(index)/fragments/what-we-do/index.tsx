@@ -31,6 +31,7 @@ export const WhatWeDo: FC = memo(() => {
             {cardOptions.map(({ title }, index) => (
               <TabButton
                 key={index}
+                animationId="bubble"
                 variant="rounded-primary"
                 className="w-[334px] md:w-full"
                 onClick={() => setActiveTab(index)}

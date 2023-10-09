@@ -1,27 +1,48 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode } from "react"
+import { motion } from "framer-motion"
 
 interface ITabButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string | ReactNode
   isActiveTab: boolean
+  animationId: string
   variant?: "rounded-primary" | "rounded-secondary" | "outlined"
   className?: string
 }
 
-export const TabButton: FC<ITabButton> = ({ children, isActiveTab, variant, className = "", ...props }) => (
+export const TabButton: FC<ITabButton> = ({
+  children,
+  isActiveTab,
+  animationId,
+  variant,
+  className = "",
+  ...props
+}) => (
   <button
-    className={`text-subtitle leading-[120%] ${
+    className={`relative z-10 text-subtitle leading-[120%] ${
       variant === "rounded-primary"
-        ? `tab-btn-rounded-primary ${isActiveTab && "bg-primary-main hover:bg-primary-main"}`
+        ? `tab-btn-rounded-primary ${isActiveTab && "hover:bg-primary-main"}`
         : variant === "rounded-secondary"
         ? `tab-btn-rounded-secondary ${isActiveTab && "border-black bg-black text-white hover:bg-black"}`
         : variant === "outlined"
-        ? `tab-btn-outlined ${
-            isActiveTab && "border-b-primary-main text-black hover:border-b-primary-main hover:text-black"
-          }`
+        ? `tab-btn-outlined md:text-[18px] ${isActiveTab && "text-black hover:border-b-[transparent] hover:text-black"}`
         : ""
     } ${className}`}
+    style={{ WebkitTapHighlightColor: "transparent" }}
     {...props}
   >
+    {isActiveTab && (
+      <motion.span
+        layoutId={animationId}
+        className={`absolute -z-[1] ${
+          variant === "rounded-primary"
+            ? "inset-0 rounded-full bg-primary-main"
+            : variant === "outlined"
+            ? "-bottom-[3px] left-0 right-0 h-[3px] bg-primary-main"
+            : ""
+        }`}
+        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+      />
+    )}
     {children}
   </button>
 )
