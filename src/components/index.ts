@@ -1,6 +1,7 @@
 "use client"
 export * from "./button"
 export * from "./card"
+export * from "./featured-resources"
 export * from "./footer"
 export * from "./header"
 export * from "./tab-buttons"
