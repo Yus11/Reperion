@@ -21,13 +21,13 @@ export const Card: FC<ICard> = ({ title, image, newsSection, date, resourceLink,
         <p className="text-caption uppercase text-primary-light">{newsSection}</p>
         <span className="text-paragraph text-gray-dark-100">{date}</span>
       </div>
-      <h1
+      <h2
         className={`mb-8 mt-6 line-clamp-2 text-ellipsis text-subtitle ${
           theme === "black" ? "text-white" : "text-black"
         }`}
       >
         {title}
-      </h1>
+      </h2>
       <a href={resourceLink} target="_blank">
         <Button variant="outlined" className="group-hover:text-primary-main">
           Learn more

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 export function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = useState<"down" | "up" | null>(null)
 
+  const [scrolled, setScrolled] = useState(false)
+
   useEffect(() => {
     let lastScrollY = window.scrollY
 
@@ -14,6 +16,12 @@ export function useScrollDirection() {
         setScrollDirection(direction)
       }
       lastScrollY = scrollY > 0 ? scrollY : 0
+
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
     }
     window.addEventListener("scroll", updateScrollDirection)
 
@@ -22,5 +30,5 @@ export function useScrollDirection() {
     }
   }, [scrollDirection])
 
-  return scrollDirection
+  return { scrollDirection, scrolled }
 }
