@@ -10,7 +10,7 @@ import { Navigation } from "./fragments"
 import styles from "./_styles.module.css"
 
 export const Header: FC = memo(() => {
-  const scrollDirection = useScrollDirection()
+  const { scrollDirection, scrolled } = useScrollDirection()
   const windowWidth = useWindowWidth()
   const [openMenu, setOpenMenu] = useState(false)
 
@@ -23,7 +23,11 @@ export const Header: FC = memo(() => {
   }, [openMenu, windowWidth])
 
   return (
-    <header className={`container ${styles.header} ${scrollDirection === "down" ? "-top-[100%]" : "top-0 bg-white"}`}>
+    <header
+      className={`${styles.header} ${scrollDirection === "down" ? "-top-[100%]" : "top-0"} ${
+        scrolled || openMenu ? "bg-white" : "bg-[transparent]"
+      }`}
+    >
       <div className="flex items-center justify-between">
         <Link href="/" className={openMenu ? "invisible" : "visible"}>
           <Logo className="h-[56px] w-[182px]" />

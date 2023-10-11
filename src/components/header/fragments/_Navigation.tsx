@@ -1,6 +1,7 @@
 "use client"
 import React, { FC, MouseEventHandler, useCallback } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { Button } from "@/components"
 import { useToggle } from "@/utils"
@@ -9,11 +10,12 @@ import styles from "./_styles.module.css"
 
 interface INavigation {
   openMenu: boolean
-  toggleOpenMenu: MouseEventHandler<HTMLButtonElement | HTMLDivElement>
+  toggleOpenMenu: MouseEventHandler<HTMLElement>
   windowWidth: number
 }
 
 export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWidth }) => {
+  const pathName = usePathname()
   const [isOpenDropDown, handleOpenDropDown] = useToggle(false)
 
   const generateStyles = useCallback(
@@ -27,7 +29,7 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
       onClick={toggleOpenMenu}
     >
       <nav aria-label="Header navigation" className={styles.navigation} onClick={(event) => event.stopPropagation()}>
-        <Link href="/" className={styles.navigation_links}>
+        <Link href="/" className={styles.navigation_links} onClick={toggleOpenMenu}>
           About Us
         </Link>
         <div className="group relative">
@@ -59,14 +61,26 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
               `${isOpenDropDown ? "xl:max-h-[75px]" : "xl:max-h-0"}`
             )}`}
           >
-            <Link href="/cybersecurity">Cybersecurity</Link>
-            <Link href="/counter-drone">Counter-Drone</Link>
+            <Link
+              href={"/cybersecurity"}
+              className={pathName === "/cybersecurity" ? "text-primary-main" : ""}
+              onClick={toggleOpenMenu}
+            >
+              Cybersecurity
+            </Link>
+            <Link
+              href={"/counter-drone"}
+              onClick={toggleOpenMenu}
+              className={pathName === "/counter-drone" ? "text-primary-main" : ""}
+            >
+              Counter-Drone
+            </Link>
           </div>
         </div>
-        <Link href="/resources" className={styles.navigation_links}>
+        <Link href={"/resources"} className={styles.navigation_links} onClick={toggleOpenMenu}>
           Resources
         </Link>
-        <Link href="/contact-us" className={`hidden md:mt-[64px] md:block md:max-w-full`}>
+        <Link href={"/contact-us"} className={`hidden md:mt-[64px] md:block md:max-w-full`} onClick={toggleOpenMenu}>
           <Button className="w-full">Contact Us</Button>
         </Link>
       </nav>
