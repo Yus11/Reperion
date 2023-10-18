@@ -22,9 +22,9 @@ export const TabButton: FC<ITabButton> = ({
       variant === "rounded-primary"
         ? `tab-btn-rounded-primary ${isActiveTab && "hover:bg-primary-main"}`
         : variant === "rounded-secondary"
-        ? `tab-btn-rounded-secondary ${isActiveTab && "border-black bg-black text-white hover:bg-black"}`
+        ? `tab-btn-rounded-secondary ${isActiveTab && "text-white hover:bg-black"}`
         : variant === "outlined"
-        ? `tab-btn-outlined md:text-[18px] ${isActiveTab && "text-black hover:border-b-[transparent] hover:text-black"}`
+        ? `tab-btn-outlined lg:text-[18px] ${isActiveTab && "text-black hover:border-b-[transparent] hover:text-black"}`
         : ""
     } ${className}`}
     style={{ WebkitTapHighlightColor: "transparent" }}
@@ -38,6 +38,8 @@ export const TabButton: FC<ITabButton> = ({
             ? "inset-0 rounded-full bg-primary-main"
             : variant === "outlined"
             ? "-bottom-[3px] left-0 right-0 h-[3px] bg-primary-main"
+            : variant === "rounded-secondary"
+            ? "inset-0 rounded-full bg-black"
             : ""
         }`}
         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
