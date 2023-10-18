@@ -34,8 +34,8 @@
     @apply w-full h-[53px] rounded-[50px]
     flex items-center justify-center text-gray-dark-100
     border-[1px] border-gray-light hover:bg-gray-light
-    hover:text-white active:border-black
-    active:bg-primary-main
+    hover:text-white
+
   }
 
   .tab-btn-outlined {
