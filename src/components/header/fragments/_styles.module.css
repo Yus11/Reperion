@@ -29,18 +29,18 @@
   origin-top scale-0 transform flex-col
   gap-2 rounded-md bg-black py-4 text-white
   transition-all duration-100 ease-in-out
-  xl:static xl:scale-100 xl:overflow-hidden
-  xl:bg-white xl:py-0 xl:text-black
-  xl:transition-max-height;
+  xl:static xl:scale-100 xl:gap-3
+  xl:overflow-hidden xl:bg-white xl:py-0
+  xl:text-black xl:transition-max-height;
 }
 
 .resources_box a {
-  @apply px-5 py-2 text-paragraph
-  hover:bg-gray-dark-200
-  hover:text-primary-main xl:px-4 xl:py-0
+  @apply px-5 py-2 text-paragraph hover:bg-gray-dark-200
+  hover:text-primary-main
+  xl:h-[26px] xl:px-4 xl:py-0
   xl:hover:bg-white xl:hover:text-black;
 }
 
 .resources_box a:first-child {
-  @apply xl:mt-4 md:mt-3;
+  @apply xl:mt-3;
 }

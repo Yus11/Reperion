@@ -1,6 +1,6 @@
-import air from "../../../../../public/what-we-do-[air-image].jpg"
-import land from "../../../../../public/what-we-do-[land-image].jpg"
-import sea from "../../../../../public/what-we-do-[sea-image].jpg"
+import air from "../../../../../public/what-we-do-air-image.jpg"
+import land from "../../../../../public/what-we-do-land-image.jpg"
+import sea from "../../../../../public/what-we-do-sea-image.jpg"
 
 import { CardOptions, FieldImages, Fields } from "./_types"
 

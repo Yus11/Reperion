@@ -1,5 +1,4 @@
 import { ReactNode } from "react"
-import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 
 import { Footer, Header } from "@/components"
@@ -12,11 +11,6 @@ const poppins = Poppins({
   style: "normal",
   display: "swap",
 })
-
-export const metadata: Metadata = {
-  title: "Reperion - cybersecurity solutions",
-  description: "Securing mobile operating assets from cyber and drone attacks across land, sea and air",
-}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
