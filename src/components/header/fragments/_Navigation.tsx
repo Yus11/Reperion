@@ -58,7 +58,7 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
           <div
             className={`${styles.resources_box} ${generateStyles(
               "group-hover:scale-100",
-              `${isOpenDropDown ? "xl:max-h-[75px]" : "xl:max-h-0"}`
+              `${isOpenDropDown ? "xl:max-h-[76px]" : "xl:max-h-0"}`
             )}`}
           >
             <Link

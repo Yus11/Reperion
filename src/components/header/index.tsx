@@ -14,7 +14,7 @@ export const Header: FC = memo(() => {
   const windowWidth = useWindowWidth()
   const [openMenu, setOpenMenu] = useState(false)
 
-  const toggleOpenMenu = useCallback<MouseEventHandler<HTMLButtonElement | HTMLDivElement>>(() => {
+  const toggleOpenMenu = useCallback<MouseEventHandler<HTMLElement>>(() => {
     windowWidth < 1200 && setOpenMenu((prevState) => !prevState)
   }, [windowWidth])
 
