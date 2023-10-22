@@ -17,11 +17,11 @@
 
 .link_button {
   @apply flex-none xl:text-primary-main
-  md:max-w-[116px] xl:[&>svg>path]:fill-primary-main
+  md:max-w-[116px] xl:[&>svg>path]:fill-primary-main;
 }
 
 .field_image {
   @apply invisible absolute left-0 h-full
   w-[41%] max-w-[578px] opacity-0 transition-opacity
-  duration-200 xl:hidden
+  duration-200 xl:hidden;
 }

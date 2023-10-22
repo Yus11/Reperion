@@ -1,7 +1,7 @@
-import React, { FC, useState } from "react"
+import React, { FC, memo, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { AnimatePresence, motion } from "framer-motion"
 
 import { Button, TabButton } from "@/components"
@@ -10,14 +10,27 @@ import { useWindowWidth } from "@/utils"
 
 import { ProductOptions } from "../_types"
 
-export const TabSection: FC<{ productOptions: ProductOptions[] }> = ({ productOptions }) => {
+export const TabSection: FC<{ productOptions: ProductOptions[] }> = memo(({ productOptions }) => {
   const windowWidth = useWindowWidth()
+  const targetRef = useRef<HTMLElement>(null)
   const pathName = usePathname()
-  const [activeTab, setActiveTab] = useState<number>(0)
+  const params = useSearchParams()
+  const paramsValue = Number(params.get("product"))
+  const [activeTab, setActiveTab] = useState<number>(paramsValue || 0)
   const [activeNestedTab, setActiveNestedTab] = useState<number>(0)
 
+  useEffect(() => {
+    if (paramsValue) {
+      targetRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      })
+    }
+  }, [paramsValue])
+
   return (
-    <section className="container flex justify-between gap-[90px] 1xl:flex-col 1xl:gap-10">
+    <section ref={targetRef} className="container flex justify-between gap-[90px] 1xl:flex-col 1xl:gap-10">
       <div className="w-full max-w-[334px] 1xl:flex 1xl:max-w-full 1xl:items-center 1xl:gap-8 md:flex-col">
         <div className="w-full 1xl:w-1/2 md:w-full">
           {["Sea", "Land", "Air"].map((item, index) => (
@@ -135,4 +148,4 @@ export const TabSection: FC<{ productOptions: ProductOptions[] }> = ({ productOp
       </div>
     </section>
   )
-}
+})

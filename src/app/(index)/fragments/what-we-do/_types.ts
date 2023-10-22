@@ -11,7 +11,7 @@ type Fields = {
   title: string
   text: string
   styles: string
-  link?: string
+  link: string
 }
 
 type FieldImages = {
