@@ -20,15 +20,20 @@ const cardOptions: CardOptions[] = [
 ]
 
 const cyberOptions: Fields[] = [
-  { title: "Sea", text: "Securing Maritime Infrastructure", styles: "peer/sea" },
-  { title: "Land", text: "Vehicular Protection", styles: "peer/land" },
-  { title: "Air", text: "Cybersecurity for technology in the sky", styles: "peer/air" },
+  { title: "Sea", text: "Securing Maritime Infrastructure", styles: "peer/sea", link: "/cybersecurity" },
+  { title: "Land", text: "Vehicular Protection", styles: "peer/land", link: "/cybersecurity" },
+  { title: "Air", text: "Cybersecurity for technology in the sky", styles: "peer/air", link: "/cybersecurity" },
 ]
 
 const counterDroneOptions: Fields[] = [
-  { title: "Sea", text: "Protecting maritime infrastructure against drone threats", styles: "peer/sea" },
-  { title: "Land", text: "Drone protection for land-based assets.", styles: "peer/land" },
-  { title: "Air", text: "Cybersecurity for technology in the sky", styles: "peer/air" },
+  {
+    title: "Sea",
+    text: "Protecting maritime infrastructure against drone threats",
+    styles: "peer/sea",
+    link: "/counter-drone",
+  },
+  { title: "Land", text: "Drone protection for land-based assets.", styles: "peer/land", link: "/counter-drone" },
+  { title: "Air", text: "Cybersecurity for technology in the sky", styles: "peer/air", link: "/counter-drone" },
 ]
 
 const fieldImages: FieldImages[] = [
