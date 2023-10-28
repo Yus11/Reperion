@@ -1,8 +1,7 @@
 .hero_banner {
   @apply relative pb-[96px] pt-[148px]
-    before:absolute before:inset-0
-    before:-top-[120px] before:-z-[1] xl:overflow-hidden
-    xl:before:-top-[136px] xl:flex xl:flex-col xl:items-center lg:py-10;
+  xl:overflow-hidden xl:flex xl:flex-col
+  xl:items-center lg:py-10;
 }
 
 .article_news {
@@ -12,8 +11,9 @@
 }
 
 .video {
-    @apply absolute -top-[140px] -z-[1] min-h-fit w-auto
+    @apply absolute -top-[150px] -z-[1] min-h-fit w-auto
     opacity-[.24] min-w-full max-w-full
-    1xl:-top-[120px] xl:max-w-none
-    lg:-top-[119px]
+    1xl:-top-[120px] xl:-top-[160px] xl:max-w-none
+    xl:min-w-fit lg:-top-[143px] lg:max-w-[200%]
+    lg:min-w-0 md:max-w-[274%] md:-top-[95px]
 }
