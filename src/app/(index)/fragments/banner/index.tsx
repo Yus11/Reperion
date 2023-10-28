@@ -13,10 +13,7 @@ export const Banner: FC = () => (
           From Cyber and Drone <span className="text-black">Attacks Across Land, Sea and Air.</span>
         </span>
       </h1>
-      <Button variant="filled" className="mt-[64px] xl:mt-12 md:w-full">
-        Get started
-      </Button>
-      <div className="mt-[160px] w-full xl:mt-20">
+      <div className="mt-[160px] w-full xl:mt-[180px]">
         <h2 className="text-subtitle uppercase">Latest Resources</h2>
         <div className="mt-6 flex justify-between gap-8 md:flex-col">
           {[
@@ -48,7 +45,7 @@ export const Banner: FC = () => (
       </div>
     </div>
     <video className={styles.video} autoPlay muted loop>
-      <source src="/main-page-banner-bg.mp4" type="video/mp4" />
+      <source src="/main-page-banner-bg%20.mp4" type="video/mp4" />
     </video>
   </section>
 )

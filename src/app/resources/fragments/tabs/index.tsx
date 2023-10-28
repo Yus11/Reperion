@@ -1,14 +1,33 @@
-import React, { FC, useState } from "react"
+"use client"
+import React, { FC, useEffect, useState } from "react"
 
 import { Card, TabButton } from "@/components"
+import { PublicationData } from "@/types"
+import { getPublications } from "@/utils"
 
-import { categories, publications } from "./_constants"
+import { categories } from "./_constants"
 
 import styles from "./_styles.module.css"
 
 export const Tabs: FC = () => {
-  const [activeTab, setActiveTab] = useState<number>(0)
+  const [activeTab, setActiveTab] = useState<{ id: number; name: string }>({
+    id: 0,
+    name: "Medium Blog",
+  })
   const [isOpen, setIsOpen] = useState<boolean>(true)
+
+  const [data, setData] = useState<PublicationData | null>(null)
+  const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    getPublications("", setLoading, setData)
+  }, [])
+
+  useEffect(() => {
+    getPublications("", setLoading, setData)
+  }, [activeTab])
+
+  console.log(data)
 
   return (
     <section className="container">
@@ -18,9 +37,9 @@ export const Tabs: FC = () => {
           <TabButton
             key={item}
             variant="outlined"
-            isActiveTab={activeTab === index}
+            isActiveTab={activeTab.id === index}
             animationId="publications-tab"
-            onClick={() => setActiveTab(index)}
+            onClick={() => setActiveTab({ id: index, name: item })}
             children={item}
           />
         ))}
@@ -50,9 +69,9 @@ export const Tabs: FC = () => {
             <li
               key={index}
               className={`mt-3 text-paragraph transition-[font-weight] duration-300 ${
-                index === activeTab ? "font-semibold text-primary-main" : "font-normal text-black"
+                index === activeTab.id ? "font-semibold text-primary-main" : "font-normal text-black"
               }`}
-              onClick={() => setActiveTab(index)}
+              onClick={() => setActiveTab({ id: index, name: item })}
             >
               {item}
             </li>
@@ -60,7 +79,9 @@ export const Tabs: FC = () => {
         </ul>
       </div>
       <div className="my-6 flex items-center justify-between md:flex-col md:items-start md:gap-y-4">
-        <p className="text-[20px] text-paragraph text-gray-dark-100 md:text-[16px]">Total: {activeTab}</p>
+        <p className="text-[20px] text-paragraph text-gray-dark-100 md:text-[16px]">
+          Total: {data?.meta.pagination.total || 0}
+        </p>
         <div className="relative w-full max-w-[640px] xl:max-w-[400px] md:max-w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,8 +102,17 @@ export const Tabs: FC = () => {
         </div>
       </div>
       <ul className="flex flex-wrap gap-8 md:flex-col">
-        {publications.map((publication, index) => (
-          <Card {...publication} className="xl:h-auto xl:w-[47.5%] md:h-auto md:w-full" theme="white" key={index} />
+        {data?.data.map(({ attributes: { title, image, category, createdAt, slug }, id }, index) => (
+          <Card
+            title={title}
+            category={category}
+            createdAt={createdAt}
+            image={`${process.env.API}${image.data.attributes.url}`}
+            slug={`resources/${slug}`}
+            className="xl:h-auto xl:w-[47.5%] md:h-auto md:w-full"
+            theme="white"
+            key={index}
+          />
         ))}
       </ul>
     </section>

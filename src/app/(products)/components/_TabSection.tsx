@@ -20,7 +20,7 @@ export const TabSection: FC<{ productOptions: ProductOptions[] }> = memo(({ prod
   const [activeNestedTab, setActiveNestedTab] = useState<number>(0)
 
   useEffect(() => {
-    if (paramsValue) {
+    if (targetRef.current && paramsValue) {
       targetRef.current?.scrollIntoView({
         behavior: "smooth",
         block: "start",

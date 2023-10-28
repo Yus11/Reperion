@@ -1,8 +1,5 @@
 import { Metadata } from "next"
 
-import { FeaturedResources } from "@/components"
-import { featuredResources } from "@/constants"
-
 import {
   Banner,
   Industries,
@@ -41,7 +38,7 @@ export default function Home() {
       <Industries />
       <OurProducts />
       <ReperionTeam />
-      <FeaturedResources publications={featuredResources} />
+      {/*<FeaturedResources publications={featuredResources} />*/}
     </main>
   )
 }

@@ -33,7 +33,7 @@ export const WhatWeDo: FC = memo(() => {
                 key={index}
                 animationId="bubble"
                 variant="rounded-primary"
-                className="w-[334px] md:w-full"
+                className="w-[334px] xl:w-full"
                 onClick={() => setActiveTab(index)}
                 isActiveTab={index === activeTab}
               >

@@ -1,13 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+        pathname: "/**",
+      },
+    ],
   },
 
   eslint: {
     ignoreDuringBuilds: true,
+  },
+
+  env: {
+    API_TOKEN: process.env.API_TOKEN,
+    API: process.env.API,
+    API_URL: process.env.API_URL,
   },
 }
 
