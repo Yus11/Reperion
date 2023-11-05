@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+/cms/node_modules
 /.pnp
 .pnp.js
 .idea
@@ -32,3 +33,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/cms/node_modules/
