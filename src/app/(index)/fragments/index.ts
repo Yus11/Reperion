@@ -1,5 +1,7 @@
+"use client"
 export * from "./banner"
 export * from "./industries"
+export * from "./other-publications"
 export * from "./our-products"
 export * from "./partnerships"
 export * from "./reperion-team"

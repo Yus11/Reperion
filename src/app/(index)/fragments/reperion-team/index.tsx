@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 
 export const ReperionTeam: FC = () => (
-  <section className="container flex justify-between gap-8 md:flex-col md:gap-10">
+  <section id="team" className="container flex justify-between gap-8 md:flex-col md:gap-10">
     <h1 className="adaptive-title w-full max-w-[578px] xl:max-w-[48%] md:max-w-full">
       Reperion <span className="block text-black">Team</span>
     </h1>

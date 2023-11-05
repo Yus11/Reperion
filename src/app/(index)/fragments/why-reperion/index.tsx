@@ -5,7 +5,7 @@ import { advantages } from "./_constants"
 import styles from "./_styles.module.css"
 
 export const WhyReperion: FC = () => (
-  <section className="bg-black">
+  <section id="why-reperion" className="bg-black">
     <div className="container">
       <h1 className="adaptive-title">
         Why <span className="block font-normal text-white xl:inline md:block">Reperion?</span>

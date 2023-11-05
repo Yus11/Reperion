@@ -1,14 +1,19 @@
 .pages_banner {
   @apply relative overflow-hidden bg-no-repeat
-    pb-[292px] -mt-[120px] -z-[1] pt-[284px]
-    before:absolute before:right-[22px]
-    before:-top-[208px] before:h-[895px]
-    before:-z-[1] before:w-[700px] before:opacity-[.2]
-    before:bg-[url('/banner-secondary.mp4')]
-    before:bg-cover before:bg-center
-    before:bg-no-repeat xl:before:w-[646px]
-    xl:before:h-[652px] xl:pt-[176px] xl:pb-[160px]
-    xl:before:-top-[95px] xl:before:-right-[185px]
-    md:before:-top-[100px] md:before:-right-[380px]
-    md:pb-20;
+  pb-[292px] -mt-[120px] -z-[1] pt-[284px]
+  xl:pt-[176px] xl:pb-[160px] md:pb-20;
+}
+
+.heading {
+  @apply w-full text-center text-h1
+  font-semibold text-primary-main
+  xl:text-[64px] md:break-words md:px-5
+  md:text-[56px]
+}
+
+.video_bg {
+  @apply absolute -top-[200px] right-0 -z-10
+  h-[895px] 1xl:-top-[90px] 1xl:h-[652px]
+  xl:-right-[120px] md:-right-[279px]
+  md:-top-8 md:h-[550px] md:max-w-[150%]
 }

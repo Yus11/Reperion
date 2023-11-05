@@ -1,55 +1,41 @@
-import React, { FC } from "react"
+import { FC, memo, useMemo } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import { Button } from "@/components"
 import { Logo } from "@/icons"
 
 import { mainPageLinks, products, resources } from "./_constants"
+import { Form } from "./fragments"
 
-export const Footer: FC = () => {
+export const Footer: FC = memo(() => {
   const pathName = usePathname()
 
+  const isLight = useMemo<boolean>(() => pathName === "/", [pathName])
+
   return (
-    <footer className={pathName === "/" ? "bg-white" : "bg-black"}>
+    <footer className={isLight ? "bg-white" : "bg-black"}>
       <div className="container pb-[50px] lg:pb-10">
         <div className="flex justify-between gap-12 border-b-2 border-b-gray-main pb-[52px] 1xl:flex-col 1xl:gap-8 xl:pb-8">
           <div className="max-w-[700px] 1xl:max-w-full">
-            <h1 className={`text-h3 ${pathName === "/" ? "text-primary-main" : "text-primary-light"} md:break-words`}>
+            <h1 className={`text-h3 ${isLight ? "text-primary-main" : "text-primary-light"} md:break-words`}>
               Pioneering the next generation{" "}
-              <span className={`block font-semibold ${pathName === "/" ? "text-black" : "text-white"}`}>
+              <span className={`block font-semibold ${isLight ? "text-black" : "text-white"}`}>
                 of operational resilience
               </span>
             </h1>
             <p
-              className={`mt-[56px] pr-10 text-h6 1xl:mt-10 1xl:pr-0 ${pathName === "/" ? "text-black" : "text-white"}`}
+              id="contact-us"
+              className={`mt-[56px] pr-10 text-h6 1xl:mt-10 1xl:pr-0 ${isLight ? "text-black" : "text-white"}`}
             >
               If you have any questions please Contact Us
             </p>
           </div>
-          <form className="w-full max-w-[578px] 1xl:max-w-full">
-            <input
-              type="text"
-              placeholder="Name"
-              className={`input ${pathName === "/" ? "focus:border-b-black" : "focus:border-b-white"}`}
-            />
-            <input type="email" placeholder="Email" className="input mb-[56px] mt-6" />
-            <Button type="submit" className="mb-6">
-              Submit
-            </Button>
-            <span className="text-small text-gray-dark-100">
-              I consent to the use of my personal information by REPERION: to receive documentation and messages
-              regarding our products and services. For more information, please see our{" "}
-              <a href="#" className="text-primary-main">
-                Privacy Notice.
-              </a>
-            </span>
-          </form>
+          <Form isLight={isLight} />
         </div>
         <div className="flex justify-between gap-12 pt-[52px] 1xl:flex-col 1xl:gap-8 xl:pt-8">
           <div>
-            <Logo className="mb-6" fill={pathName !== "/" ? "white" : "black"} />
-            <span className={`text-small ${pathName === "/" ? "text-gray-dark-100" : "text-gray-main"}`}>
+            <Logo className="mb-6" fill={isLight ? "black" : "white"} />
+            <span className={`text-small ${isLight ? "text-gray-dark-100" : "text-gray-main"}`}>
               Copyright © 2023 Reperion. All rights reserved
             </span>
           </div>
@@ -59,14 +45,12 @@ export const Footer: FC = () => {
                 {pages.map(({ title, link }, index) => (
                   <li
                     key={index}
-                    className={`text-paragraph first:font-semibold ${pathName === "/" ? "text-black" : "text-white"}`}
+                    className={`text-paragraph first:font-semibold ${isLight ? "text-black" : "text-white"}`}
                   >
                     {link ? (
                       <Link
                         href={link}
-                        className={`hover:text-primary-main ${
-                          pathName === "/" ? "text-gray-dark-100" : "text-gray-main"
-                        }`}
+                        className={`hover:text-primary-main ${isLight ? "text-gray-dark-100" : "text-gray-main"}`}
                       >
                         {title}
                       </Link>
@@ -78,16 +62,14 @@ export const Footer: FC = () => {
               </ul>
             ))}
             <div className="w-[207px] md:w-[140px]">
-              <p className={`text-paragraph font-semibold ${pathName === "/" ? "text-black" : "text-white"}`}>
-                Contact Us
-              </p>
+              <p className={`text-paragraph font-semibold ${isLight ? "text-black" : "text-white"}`}>Contact Us</p>
               <a
                 href="mailto:info@reperion.io"
                 className="mb-20 mt-6 block text-paragraph font-semibold text-primary-main md:mb-10"
               >
                 info@reperion.io
               </a>
-              <p className={`text-paragraph font-semibold ${pathName === "/" ? "text-black" : "text-white"}`}>
+              <p className={`text-paragraph font-semibold ${isLight ? "text-black" : "text-white"}`}>
                 We are in social networks
               </p>
               <a href="#" className="mt-6 block">
@@ -105,4 +87,4 @@ export const Footer: FC = () => {
       </div>
     </footer>
   )
-}
+})

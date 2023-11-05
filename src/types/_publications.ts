@@ -13,9 +13,11 @@ interface Pagination {
 interface Publications {
   title: string
   isFeatured: boolean
+  pageDescription: string
   createdAt: string
   updatedAt: string
   publishedAt: string
+  publicationDate: string
   category: string
   author: string
   image: Image
@@ -54,8 +56,6 @@ interface Attributes {
 
 interface Formats {
   thumbnail: ImageSizes
-  small: ImageSizes
-  medium: ImageSizes
 }
 
 interface ImageSizes {

@@ -3,7 +3,7 @@ import { Metadata } from "next"
 
 import { Banner } from "@/components"
 
-import { Tabs } from "./fragments"
+import { OtherPublications, Tabs } from "./fragments"
 
 export const metadata: Metadata = {
   title: "Resources | Reperion",
@@ -28,7 +28,7 @@ export default function Resources() {
         title={["Reperion", "Resources"]}
         subtitle={["Reperion offers protection from", "cyber and drone attacks."]}
       />
-      {/*<FeaturedResources publications={featuredResources} />*/}
+      <OtherPublications />
       <Tabs />
     </>
   )

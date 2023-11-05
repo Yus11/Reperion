@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ["./src/components/**/*.{js,ts,jsx,tsx}", "./src/app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
       primary: {
@@ -51,6 +51,7 @@ const config: Config = {
         // ----- Main page sections backgrounds ----- //
         // <Hero> section's card background
         "card-gradient": "linear-gradient(180deg, #131313 0%, rgba(19, 19, 19, 0.00) 100%)",
+        "black-card-gradient": "linear-gradient(180deg, #181818 0%, rgba(46, 46, 46, 0.00) 100%)",
         // <Threat landscape> section background
         "threat-landscape": "url('/threat-landscape-bg.png')",
         // <What we do> section cards background
@@ -74,9 +75,16 @@ const config: Config = {
         // <Industries> sections background
         "industries-gradient": "linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.71) 100%)",
         "industries-tablet-gradient": "linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.71) 100%)",
+        // an-publication-footer-solutions.png
+        //
+        "a-publication": "url('/a-publication-footer-solutions.png')",
+        "a-publication-mobile": "url('/a-publication-footer-solutions-mobile.png')",
       },
       transitionProperty: {
         "max-height": "max-height",
+      },
+      boxShadow: {
+        "card-hover": "0px 4px 15px 0px rgba(0, 0, 0, 0.08)",
       },
     },
   },

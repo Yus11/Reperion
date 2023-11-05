@@ -11,7 +11,7 @@ export const OurProducts: FC = memo(() => {
   const [activeTab, setActiveTab] = useState<number>(0)
 
   return (
-    <section className="container">
+    <section id="our-products" className="container">
       <div className="flex items-center justify-between gap-12 xl:flex-col xl:items-start xl:gap-7">
         <h1 className="adaptive-title">
           Our <span className="block text-black">Products</span>

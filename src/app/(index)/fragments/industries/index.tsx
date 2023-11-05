@@ -10,7 +10,7 @@ import styles from "./_styles.module.css"
 export const Industries: FC = () => {
   const windowWidth = useWindowWidth()
   return (
-    <section className={styles.section_container}>
+    <section id="industries" className={styles.section_container}>
       <div className="container flex justify-between gap-[64px] xl:flex-col">
         <div className="max-w-[578px] flex-1 xl:flex xl:max-w-full xl:justify-between xl:gap-12 md:flex-col md:gap-10">
           <h1 className="adaptive-title">Industries</h1>

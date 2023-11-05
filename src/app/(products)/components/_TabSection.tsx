@@ -15,12 +15,12 @@ export const TabSection: FC<{ productOptions: ProductOptions[] }> = memo(({ prod
   const targetRef = useRef<HTMLElement>(null)
   const pathName = usePathname()
   const params = useSearchParams()
-  const paramsValue = Number(params.get("product"))
-  const [activeTab, setActiveTab] = useState<number>(paramsValue || 0)
+  const paramsValue = params.get("product")
+  const [activeTab, setActiveTab] = useState<number>((paramsValue && Number(paramsValue)) || 0)
   const [activeNestedTab, setActiveNestedTab] = useState<number>(0)
 
   useEffect(() => {
-    if (targetRef.current && paramsValue) {
+    if (paramsValue !== null) {
       targetRef.current?.scrollIntoView({
         behavior: "smooth",
         block: "start",
