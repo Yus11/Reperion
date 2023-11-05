@@ -5,7 +5,8 @@ import { PublicationData } from "@/types"
 export function getPublications(
   urlParams: string = "",
   setLoading: Dispatch<SetStateAction<boolean>>,
-  setData: Dispatch<SetStateAction<PublicationData | null>>
+  setData: Dispatch<SetStateAction<PublicationData | null>>,
+  setError: Dispatch<SetStateAction<undefined | unknown>>
 ) {
   const reqOptions = {
     headers: {
@@ -20,5 +21,11 @@ export function getPublications(
     .then((data) => {
       setData(data)
       setLoading(false)
+      setError(undefined)
+    })
+    .catch((error) => {
+      setLoading(false)
+      setData(null)
+      setError(error)
     })
 }

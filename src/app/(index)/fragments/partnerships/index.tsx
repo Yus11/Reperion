@@ -6,7 +6,7 @@ import styles from "./_styles.module.css"
 
 export const Partnerships: FC = () => {
   return (
-    <section className="container">
+    <section id="partners" className="container">
       <h1 className="text-h2 font-semibold text-black lg:text-[56px] md:break-words md:text-[44px]">
         Partnerships & Collaborations
       </h1>

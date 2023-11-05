@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Logo } from "@/icons"
 import { useWindowWidth } from "@/utils"
 
-import { useScrollDirection } from "./_utils"
+import { scrollIntoTargetId, useScrollDirection } from "./_utils"
 import { Navigation } from "./fragments"
 
 import styles from "./_styles.module.css"
@@ -35,15 +35,18 @@ export const Header: FC = memo(() => {
         {windowWidth > 1199 ? (
           <div className="flex items-center">
             <Navigation openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} windowWidth={windowWidth} />
-            <Link href="#" className={styles.contact_button}>
+            <button className={styles.contact_button} onClick={(event) => scrollIntoTargetId(event, "contact-us")}>
               Contact Us
-            </Link>
+            </button>
           </div>
         ) : (
           <div className="flex items-center">
-            <Link href="#" className={`${styles.contact_button} ${openMenu ? "invisible" : "visible"}`}>
+            <button
+              className={`${styles.contact_button} ${openMenu ? "invisible" : "visible"}`}
+              onClick={(event) => scrollIntoTargetId(event, "contact-us")}
+            >
               Contact Us
-            </Link>
+            </button>
             <button className={styles.mobile_menu_button} onClick={toggleOpenMenu} aria-label="Navigation menu button">
               <span className={`${styles.mobile_menu_lines} ${openMenu ? "translate-y-[7px] rotate-45" : ""}`} />
               <span className={`${styles.mobile_menu_lines} ${openMenu ? "opacity-0" : "bg-[#141515]"}`} />

@@ -1,6 +1,6 @@
 type FooterNav = {
   title: string
-  link?: string
+  link?: string | object
 }
 const mainPageLinks: FooterNav[] = [
   {
@@ -8,11 +8,11 @@ const mainPageLinks: FooterNav[] = [
   },
   {
     title: "About Us",
-    link: "/#about",
+    link: "/#what-we-do",
   },
   {
     title: "Why Reperion?",
-    link: "/#whyReperion",
+    link: "/#why-reperion",
   },
   {
     title: "Partners",
@@ -20,7 +20,7 @@ const mainPageLinks: FooterNav[] = [
   },
   {
     title: "Products",
-    link: "/#products",
+    link: "/#our-products",
   },
   {
     title: "Team",
@@ -38,11 +38,11 @@ const products: FooterNav[] = [
   },
   {
     title: "Cybersecurity",
-    link: "products/#cybersecurity",
+    link: "/cybersecurity",
   },
   {
     title: "Counter-Drone",
-    link: "products/#counter-drone",
+    link: "/counter-drone",
   },
 ]
 
@@ -52,19 +52,23 @@ const resources: FooterNav[] = [
   },
   {
     title: "Medium Blog",
-    link: "resources/#medium-blog",
+    link: { pathname: "resources", query: { category: 1 } },
   },
   {
     title: "Academic Publications",
-    link: "resources/#academic-publications",
+    link: { pathname: "resources", query: { category: 2 } },
   },
   {
     title: "Events",
-    link: "resources/#events",
+    link: { pathname: "resources", query: { category: 3 } },
   },
   {
     title: "Articles",
-    link: "resources/#articles",
+    link: { pathname: "resources", query: { category: 4 } },
   },
 ]
-export { mainPageLinks, products, resources }
+
+const emailPattern: RegExp =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+export { emailPattern, mainPageLinks, products, resources }

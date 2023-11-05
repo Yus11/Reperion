@@ -1,6 +1,7 @@
 .search_input {
-    @apply h-[64px] w-full rounded-lg border-[1px]
+  @apply h-[64px] w-full rounded-lg border-[1px]
     border-gray-main p-4 pl-[64px] text-[20px]
-    text-paragraph text-black outline-none
-    placeholder:text-gray-dark-100 md:text-[16px]
+    text-paragraph text-gray-dark-200 outline-none
+    placeholder:text-gray-main focus:text-black
+    hover:border-gray-dark-200 md:text-[16px];
 }

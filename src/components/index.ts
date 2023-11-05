@@ -2,6 +2,7 @@
 export * from "./banner"
 export * from "./button"
 export * from "./card"
+export * from "./controlled-input"
 export * from "./featured-resources"
 export * from "./footer"
 export * from "./header"

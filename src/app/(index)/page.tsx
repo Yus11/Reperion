@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import {
   Banner,
   Industries,
+  OtherPublications,
   OurProducts,
   Partnerships,
   ReperionTeam,
@@ -38,7 +39,7 @@ export default function Home() {
       <Industries />
       <OurProducts />
       <ReperionTeam />
-      {/*<FeaturedResources publications={featuredResources} />*/}
+      <OtherPublications />
     </main>
   )
 }

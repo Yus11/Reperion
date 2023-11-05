@@ -1,0 +1,13 @@
+.input_light {
+  @apply border-b-gray-main text-gray-dark-200
+  hover:border-b-gray-dark-200 hover:text-black
+  focus:border-b-gray-dark-200 focus:text-black
+  active:border-b-gray-dark-200 active:text-black;
+}
+
+.input_dark {
+  @apply border-b-gray-dark-200 text-gray-main
+  hover:border-b-gray-light hover:text-gray-light
+  focus:border-b-gray-light focus:text-white
+  active:border-b-gray-light active:text-white;
+}

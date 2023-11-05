@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components"
 import { useToggle } from "@/utils"
 
+import { scrollIntoTargetId } from "../_utils"
+
 import styles from "./_styles.module.css"
 
 interface INavigation {
@@ -29,9 +31,25 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
       onClick={toggleOpenMenu}
     >
       <nav aria-label="Header navigation" className={styles.navigation} onClick={(event) => event.stopPropagation()}>
-        <Link href="/" className={styles.navigation_links} onClick={toggleOpenMenu}>
-          About Us
-        </Link>
+        {windowWidth > 767 ? (
+          <Link
+            href="/"
+            className={`${styles.navigation_links} ${pathName === "/" ? "text-primary-main" : ""}`}
+            onClick={(event) => {
+              scrollIntoTargetId(event, "what-we-do", toggleOpenMenu)
+            }}
+          >
+            About Us
+          </Link>
+        ) : (
+          <button
+            className={`${styles.navigation_links} ${pathName === "/" ? "text-primary-main" : ""}`}
+            onClick={(event) => scrollIntoTargetId(event, "what-we-do", toggleOpenMenu)}
+          >
+            About Us
+          </button>
+        )}
+
         <div className="group relative">
           <button
             className={`${styles.navigation_links} xl:w-full xl:items-center xl:justify-between`}
@@ -77,12 +95,19 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
             </Link>
           </div>
         </div>
-        <Link href={"/resources"} className={styles.navigation_links} onClick={toggleOpenMenu}>
+        <Link
+          href={"/resources"}
+          className={`${styles.navigation_links} ${pathName === "/resources" ? "text-primary-main" : ""}`}
+          onClick={toggleOpenMenu}
+        >
           Resources
         </Link>
-        <Link href={"/contact-us"} className={`hidden md:mt-[64px] md:block md:max-w-full`} onClick={toggleOpenMenu}>
-          <Button className="w-full">Contact Us</Button>
-        </Link>
+        <Button
+          className="hidden w-full md:mt-[64px] md:block"
+          onClick={(event) => scrollIntoTargetId(event, "contact-us", toggleOpenMenu)}
+        >
+          Contact Us
+        </Button>
       </nav>
     </div>
   )

@@ -10,7 +10,7 @@ export const WhatWeDo: FC = memo(() => {
   const [activeTab, setActiveTab] = useState<number>(0)
 
   return (
-    <section className="container pb-[96px] pt-[72px] lg:py-10">
+    <section id="what-we-do" className="container pb-[96px] pt-[72px] lg:py-10">
       <div className="flex w-full justify-between gap-[64px] xl:flex-col">
         <div className="max-w-[578px] xl:max-w-full">
           <h1 className="adaptive-title">

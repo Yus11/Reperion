@@ -1,7 +1,7 @@
 "use client"
-import { useEffect, useState } from "react"
+import React, { MouseEventHandler, useEffect, useState } from "react"
 
-export function useScrollDirection() {
+function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = useState<"down" | "up" | null>(null)
 
   const [scrolled, setScrolled] = useState(false)
@@ -32,3 +32,15 @@ export function useScrollDirection() {
 
   return { scrollDirection, scrolled }
 }
+
+function scrollIntoTargetId(
+  event: React.MouseEvent<HTMLElement, MouseEvent>,
+  targetId: string,
+  toggleOpenMenu?: MouseEventHandler<HTMLElement>
+) {
+  const target = document.getElementById(targetId)
+  target?.scrollIntoView()
+  toggleOpenMenu && toggleOpenMenu(event)
+}
+
+export { scrollIntoTargetId, useScrollDirection }
