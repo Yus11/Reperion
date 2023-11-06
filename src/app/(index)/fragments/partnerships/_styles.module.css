@@ -1,6 +1,0 @@
-.logo_card {
-    @apply h-[200px] w-[33.33%] border-l-[1px]
-    border-t-[1px] border-gray-light bg-contain
-    bg-center bg-no-repeat lg:w-[50%] lg:min-w-[340px]
-    md:w-full md:min-w-full
-}
