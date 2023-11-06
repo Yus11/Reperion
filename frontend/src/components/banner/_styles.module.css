@@ -1,0 +1,19 @@
+.pages_banner {
+  @apply relative overflow-hidden bg-no-repeat
+  pb-[292px] -mt-[120px] -z-[1] pt-[284px]
+  xl:pt-[176px] xl:pb-[160px] md:pb-20;
+}
+
+.heading {
+  @apply w-full text-center text-h1
+  font-semibold text-primary-main
+  xl:text-[64px] md:break-words md:px-5
+  md:text-[56px]
+}
+
+.video_bg {
+  @apply absolute -top-[200px] right-0 -z-10
+  h-[895px] 1xl:-top-[90px] 1xl:h-[652px]
+  xl:-right-[120px] md:-right-[279px]
+  md:-top-8 md:h-[550px] md:max-w-[150%]
+}
