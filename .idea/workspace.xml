@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="282c3af4-4353-49ff-82e5-1afc4c4613ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/config/env/production/cron-tasks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/env/production/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/env/production/middlewares.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/env/production/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.tmp/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.tmp/data.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/middlewares.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/env/production/plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/types/generated/contentTypes.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/resources/fragments/tabs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/resources/fragments/tabs/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/featured-resources/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/featured-resources/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/fragments/_Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/fragments/_Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/constants/_featured-resources.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/constants/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,17 @@
       <recent name="C:\Users\user\Desktop\AI-EXP\reperion\backend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.develop">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="develop" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
@@ -75,6 +83,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.develop" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -87,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699304877329</updated>
       <workItem from="1699304882051" duration="9347000" />
+      <workItem from="1699325820031" duration="5367000" />
     </task>
     <task id="LOCAL-00001" summary="ref: Refactoring">
       <option name="closed" value="true" />
@@ -104,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699310601930</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changed token api">
+      <option name="closed" value="true" />
+      <created>1699325849430</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699325849430</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +133,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="ref: Refactoring" />
     <MESSAGE value="ref: Refactoring of directories" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: Refactoring of directories" />
+    <MESSAGE value="changed token api" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed token api" />
   </component>
 </project>

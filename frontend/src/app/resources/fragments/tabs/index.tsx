@@ -167,16 +167,16 @@ export const Tabs: FC = () => {
           </svg>
         </div>
       </div>
-      <ul className="flex flex-wrap gap-8 md:flex-col">
+      <ul className="flex flex-wrap justify-between gap-8 md:flex-col">
         {data?.data
           ? data.data?.map(({ id, attributes: { title, image, category, publicationDate, slug } }) => (
               <Card
                 title={title}
                 category={category}
                 publicationDate={publicationDate}
-                image={image?.data?.attributes?.url}
+                image={`${process.env.API}${image?.data?.attributes?.url}`}
                 slug={`resources/${slug}`}
-                className="xl:h-auto xl:w-[47.5%] md:h-auto md:w-full"
+                className="w-[31.5%] 1xl:w-full 1xl:max-w-[328px] xl:h-auto xl:max-w-[48%] xl:w-[47.5%] md:h-auto md:w-full md:max-w-full"
                 theme="white"
                 key={id}
               />

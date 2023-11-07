@@ -17,7 +17,7 @@ interface ICard {
 
 export const Card: FC<ICard> = ({ title, image, category, publicationDate, slug, theme, className = "" }) => (
   <article
-    className={`group h-[450px] w-full max-w-[456px] ${
+    className={`group h-[450px] max-w-[456px] ${
       theme === "black" ? "" : "border-[1px] border-gray-light bg-white hover:shadow-card-hover"
     } ${className}`}
   >

@@ -103,7 +103,7 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
           Resources
         </Link>
         <Button
-          className="hidden w-full md:mt-[64px] md:block"
+          className="hidden !w-full md:mt-[64px] md:block"
           onClick={(event) => scrollIntoTargetId(event, "contact-us", toggleOpenMenu)}
         >
           Contact Us
