@@ -67,15 +67,17 @@ export const Tabs: FC = () => {
 
   useEffect(() => {
     if (paramsValue !== null) {
-      setTimeout(() => {
-        sectionRef?.current?.scrollIntoView({
-          block: "start",
-          behavior: "smooth",
-        })
-      }, 100)
+      if(!isLoading){
+          setTimeout(() => {
+          sectionRef?.current?.scrollIntoView({
+            block: "start",
+            behavior: "smooth",
+          })
+        }, 1000)
+      }
       setParamsValue(paramsValue)
     }
-  }, [paramsValue, sectionRef])
+  }, [paramsValue, sectionRef, isLoading])
 
   return (
     <section ref={sectionRef} className="container flex flex-col">
