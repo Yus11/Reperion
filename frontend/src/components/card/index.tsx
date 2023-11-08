@@ -25,7 +25,7 @@ export const Card: FC<ICard> = ({ title, image, category, publicationDate, slug,
       <Image
         src={image}
         alt={title}
-        className="transition-scale relative duration-200 group-hover:scale-125"
+        className="transition-scale relative duration-200 group-hover:scale-125 xl:w-full"
         width={456}
         height={240}
       />

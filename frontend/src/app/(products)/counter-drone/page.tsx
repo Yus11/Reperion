@@ -9,27 +9,24 @@ import { counterDroneOptions } from "./_constants"
 
 export const metadata: Metadata = {
   title: "Counter-Drone products",
-  description: "More advanced than IT or fixed asset OT",
+  description: "Military-Level Capabilities",
   openGraph: {
     title: "Counter-Drone products",
-    description: "More advanced than IT or fixed asset OT",
+    description: "Military-Level Capabilities",
     images: "/logo-image.jpg",
   },
   twitter: {
     card: "summary_large_image",
     images: "/logo-image.jpg",
     title: "Counter-Drone products",
-    description: "More advanced than IT or fixed asset OT",
+    description: "Military-Level Capabilities",
   },
 }
 
 export default function CounterDrone() {
   return (
     <>
-      <Banner
-        title={["Counter-Drone", "Products"]}
-        subtitle={["More advanced technology than", "IT or Fixed Asset OT"]}
-      />
+      <Banner title={["Counter-Drone", "Products"]} subtitle={["Military-Level", "Capabilities"]} />
       <TabSection productOptions={counterDroneOptions} />
     </>
   )

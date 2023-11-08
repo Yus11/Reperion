@@ -11,8 +11,6 @@ export const OtherPublications: FC = () => {
   const [data, setData] = useState<PublicationData | null>(null)
   const [isLoading, setLoading] = useState(true)
 
-  console.log(data)
-
   useEffect(() => {
     getPublications("pagination[pageSize]=3&filters[isFeatured][$eq]=true&populate=*", setLoading, setData, setError)
   }, [])

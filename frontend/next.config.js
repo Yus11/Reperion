@@ -1,14 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "1337",
-        pathname: "/**",
-      },
-    ],
+    domains: ["strapi-153564-0.cloudclusters.net"],
   },
 
   eslint: {
@@ -21,18 +14,18 @@ const nextConfig = {
     API_URL: process.env.API_URL,
   },
 
-  webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = {
-      fs: false,
-      net: false,
-      dns: false,
-      child_process: false,
-      tls: false,
-    }
-
-    return config
-  },
+  // webpack5: true,
+  // webpack: (config) => {
+  //   config.resolve.fallback = {
+  //     fs: false,
+  //     net: false,
+  //     dns: false,
+  //     child_process: false,
+  //     tls: false,
+  //   }
+  //
+  //   return config
+  // },
 }
 
 module.exports = nextConfig

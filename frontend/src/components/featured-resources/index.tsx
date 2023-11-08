@@ -41,7 +41,7 @@ export const FeaturedResources: FC<IFeaturedResources> = ({ publications, parent
               publicationDate={publicationDate}
               image={`${process.env.API}${image?.data?.attributes?.url}`}
               slug={`${parentLink}${slug}`}
-              className="w-[32%] 1xl:w-full 1xl:max-w-[328px] xl:last:hidden xl:max-w-[48%] md:h-auto md:w-full md:max-w-full"
+              className="w-[32%] 1xl:w-full 1xl:max-w-[328px] xl:max-w-[48%] xl:last:hidden md:h-auto md:w-full md:max-w-full"
               theme="black"
               key={id}
             />

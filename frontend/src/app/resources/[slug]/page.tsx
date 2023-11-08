@@ -9,49 +9,55 @@ import { OtherPublications } from "./components"
 
 import styles from "./styles.module.css"
 
-export const revalidate = 10
-
-export async function generateMetadata(props: { params: { slug: string } }): Promise<Metadata> {
-  const { data }: PublicationData = await fetch(
-    `http://localhost:1337/api/publications?filters[slug][$eq]=${props.params.slug}&populate=*`,
-    {
+async function getPublication(slug: string): Promise<PublicationData | undefined> {
+  try {
+    const res = await fetch(`${process.env.API_URL}filters[slug][$eq]=${slug}&populate=*`, {
       headers: {
         Authorization: `Bearer ${process.env.API_TOKEN}`,
       },
-      cache: "no-cache",
-    }
-  ).then((res) => res.json())
+    })
 
-  const { pageDescription, image, title } = data[0].attributes
+    if (!res.ok) {
+      throw new Error("Failed to fetch data")
+    }
+
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export const revalidate = 10
+
+export async function generateMetadata(props: { params: { slug: string } }): Promise<Metadata> {
+  const data = await getPublication(props.params.slug)
+
+  if (!data) return {}
+
+  const { pageDescription, image, title } = data.data[0]?.attributes
 
   return {
+    metadataBase: new URL("https://strapi-153564-0.cloudclusters.net"),
     title: title,
     description: pageDescription,
     openGraph: {
-      images: image.data.attributes.url,
+      images: `${process.env.API}${image?.data?.attributes.url}`,
     },
   }
 }
 
 export default async function Publication(props: { params: { slug: string } }) {
-  const { data }: PublicationData = await fetch(
-    `http://localhost:1337/api/publications?filters[slug][$eq]=${props.params.slug}&populate=*`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.API_TOKEN}`,
-      },
-      cache: "no-cache",
-    }
-  ).then((res) => res.json())
+  const data = await getPublication(props.params.slug)
 
-  if (data.length === 0) return null
+  if (!data?.data) return null
 
-  const date = new Date(data[0].attributes.publicationDate)
+  const date = new Date(data.data[0]?.attributes?.publicationDate)
 
   const publicationDate = `${date.toLocaleString("en-us", { month: "short" })} ${date.getDate()}, ${date.getFullYear()}`
 
-  const { category, image, title, author, authorImage, publication_items } = data[0].attributes
+  const { category, image, title, author, authorImage, publication_items } = data.data[0]?.attributes
 
+  console.log(data.data[0]?.attributes)
   return (
     <>
       <section className="container flex flex-col pb-[96] pt-[94px] xl:pt-0 md:pt-5">
@@ -70,7 +76,7 @@ export default async function Publication(props: { params: { slug: string } }) {
             </p>
           </div>
           <Image
-            src={image?.data?.attributes.url}
+            src={`${process.env.API}${image?.data?.attributes.url}`}
             className="max-h-[397px] grayscale xl:max-h-[450px] xl:min-h-[397px] xl:w-full md:object-cover md:object-center"
             alt={title}
             width={700}
@@ -78,7 +84,7 @@ export default async function Publication(props: { params: { slug: string } }) {
           />
         </div>
         <ul className="mt-16 w-full xl:mt-10">
-          {publication_items.data.map(({ id, attributes }, index) => (
+          {publication_items?.data?.map(({ id, attributes }, index) => (
             <li key={id} className={styles.faqs_li}>
               <div className="flex max-w-[640px] gap-[54px] xl:gap-8">
                 <div className={styles.faqs_li_number}>{`${index < 9 ? 0 : ""}${index + 1}`}</div>
@@ -100,7 +106,7 @@ export default async function Publication(props: { params: { slug: string } }) {
           <div className="flex items-center">
             {authorImage?.data?.attributes?.url && (
               <Image
-                src={`${process.env.API}${authorImage.data.attributes.url}`}
+                src={`${process.env.API}${authorImage?.data?.attributes?.url}`}
                 className="mr-3 overflow-hidden rounded-full"
                 width={32}
                 height={32}

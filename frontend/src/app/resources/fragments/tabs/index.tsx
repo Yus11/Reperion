@@ -174,9 +174,9 @@ export const Tabs: FC = () => {
                 title={title}
                 category={category}
                 publicationDate={publicationDate}
-                image={`${process.env.API}${image?.data?.attributes?.url}`}
+                image={`${process.env.API}${image?.data?.attributes.url}`}
                 slug={`resources/${slug}`}
-                className="w-[31.5%] 1xl:w-full 1xl:max-w-[328px] xl:h-auto xl:max-w-[48%] xl:w-[47.5%] md:h-auto md:w-full md:max-w-full"
+                className="w-[31.5%] 1xl:w-full 1xl:max-w-[328px] xl:h-auto xl:w-[47.5%] xl:max-w-[48%] md:h-auto md:w-full md:max-w-full"
                 theme="white"
                 key={id}
               />

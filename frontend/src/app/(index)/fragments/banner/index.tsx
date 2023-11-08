@@ -17,11 +17,12 @@ export const Banner: FC = () => {
   }, [])
   return (
     <section className={styles.hero_banner}>
-      <div className="container z-[2] flex flex-col items-center py-0">
-        <h1 className="text-center text-h1 font-semibold text-primary-main xl:text-[64px] md:text-[56px]">
-          Securing Mobile <span className="font-normal text-black 1xl:block">Operating Assets </span>
+      <div className="container z-[2] flex flex-col items-center py-0 md:items-stretch">
+        <h1 className="max-w-[1200px] break-words text-center text-h1 font-semibold text-primary-main xl:text-[64px] md:inline-block md:max-w-none md:text-[56px]">
+          Securing Transportation Assets from Cyber Attacks
+          <span className="block font-normal text-black">and critical infrastructure from Drone Attacks</span>
           <span className="mt-6 block text-subtitle font-semibold text-gray-dark-100 md:text-[20px]">
-            From Cyber and Drone <span className="text-black">Attacks Across Land, Sea and Air.</span>
+            Across Land, <span className="text-black">Sea and Air.</span>
           </span>
         </h1>
         <div className="mt-[160px] w-full xl:mt-[180px]">
