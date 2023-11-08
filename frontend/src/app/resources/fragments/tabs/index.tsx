@@ -73,7 +73,7 @@ export const Tabs: FC = () => {
             block: "start",
             behavior: "smooth",
           })
-        }, 1000)
+        }, 100)
       }
       setParamsValue(paramsValue)
     }
