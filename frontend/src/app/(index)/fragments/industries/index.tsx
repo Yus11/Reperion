@@ -37,9 +37,11 @@ export const Industries: FC = () => {
         </ul>
       </div>
       {windowWidth > 767 && (
-        <video className={styles.video} autoPlay muted loop>
+        <div className={styles.video}>
+          <video className="absolute top-0" autoPlay muted loop>
           <source src="/industries-bg.mp4" type="video/mp4" />
         </video>
+        </div>
       )}
     </section>
   )
