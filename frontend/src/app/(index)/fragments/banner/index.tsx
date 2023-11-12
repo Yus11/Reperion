@@ -47,9 +47,12 @@ export const Banner: FC = () => {
           </div>
         </div>
       </div>
-      <video className={styles.video} autoPlay muted loop>
-        <source src="/main-page-banner-bg%20.mp4" type="video/mp4" />
-      </video>
+      <div className={styles.video}>
+        <video className="min-h-max min-w-[130%] 1xl:min-w-[140%] xl:min-w-[200%] lg:min-w-[230%] md:min-w-[300%]" autoPlay muted loop playsInline>
+          <source src="/main-page-banner-bg%20.mp4" type="video/mp4" />
+          <source src="/main-page-banner-bg.webm" type="video/webm" />
+        </video>
+      </div>
     </section>
   )
 }
