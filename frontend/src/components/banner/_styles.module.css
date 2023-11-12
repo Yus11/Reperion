@@ -5,15 +5,16 @@
 }
 
 .heading {
-  @apply w-full text-center text-h1
+  @apply w-full text-center text-h1 mx-auto
   font-semibold text-primary-main
-  xl:text-[64px] md:break-words md:px-5
-  md:text-[56px]
+  xl:max-w-[688px] xl:text-[64px]
+  md:break-words md:px-5 md:text-[56px]
 }
 
 .video_bg {
-  @apply absolute -top-[200px] right-0 -z-10
-  h-[895px] 1xl:-top-[90px] 1xl:h-[652px]
-  xl:-right-[120px] md:-right-[279px]
-  md:-top-8 md:h-[550px] md:max-w-[150%]
+  @apply absolute -top-[200px] right-0 -z-20
+  h-[900px] w-[900px] 1xl:-top-[90px] 1xl:h-[552px]
+  1xl:w-[700px] 1xl:-right-[120px] xl:w-[580px]
+  xl:h-[452px] md:-right-[279px] md:w-[520px]
+  md:-top-8 md:h-[450px] md:max-w-[150%]
 }
