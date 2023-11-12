@@ -1,13 +1,10 @@
 .section_container {
-    @apply relative overflow-hidden bg-industries-gradient
-    xl:bg-none xl:before:absolute xl:before:inset-0 xl:before:-z-[2]
-    xl:before:bg-black xl:after:absolute xl:after:left-0
-    xl:after:right-0 xl:after:top-0 xl:after:-z-[1] xl:after:h-[70%]
-    xl:after:bg-industries-tablet-gradient lg:xl:after:h-[60%]
-    md:before:hidden md:after:hidden md:bg-black
+    @apply relative overflow-hidden before:absolute
+    before:-z-10 before:inset-0 before:bg-industries-gradient
+    xl:before:rotate-180
 }
 
 .video {
-    @apply absolute top-0 -z-[1] min-h-full w-auto
-    min-w-full max-w-none xl:min-h-fit xl:max-w-[110%]
+    @apply absolute top-0 -z-20 min-h-full w-auto
+    min-w-full max-w-none bg-black
 }
