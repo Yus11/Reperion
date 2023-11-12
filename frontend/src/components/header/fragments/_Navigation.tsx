@@ -31,7 +31,6 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
       onClick={toggleOpenMenu}
     >
       <nav aria-label="Header navigation" className={styles.navigation} onClick={(event) => event.stopPropagation()}>
-        {windowWidth > 767 ? (
           <Link
             href="/"
             className={`${styles.navigation_links} ${pathName === "/" ? "text-primary-main" : ""}`}
@@ -41,15 +40,6 @@ export const Navigation: FC<INavigation> = ({ openMenu, toggleOpenMenu, windowWi
           >
             About Us
           </Link>
-        ) : (
-          <button
-            className={`${styles.navigation_links} ${pathName === "/" ? "text-primary-main" : ""}`}
-            onClick={(event) => scrollIntoTargetId(event, "what-we-do", toggleOpenMenu)}
-          >
-            About Us
-          </button>
-        )}
-
         <div className="group relative">
           <button
             className={`${styles.navigation_links} xl:w-full xl:items-center xl:justify-between`}
