@@ -15,9 +15,10 @@
 }
 
 .video {
-    @apply absolute -top-[150px] -z-[1] min-h-fit w-auto
-    opacity-[.24] min-w-full max-w-full
-    1xl:-top-[120px] xl:-top-[160px] xl:max-w-none
-    xl:min-w-fit lg:-top-[143px] lg:max-w-[200%]
-    lg:min-w-0 md:max-w-[274%] md:-top-[95px]
+    @apply absolute -top-[20%] -z-20 min-h-full w-auto
+    flex justify-center items-center overflow-hidden
+    opacity-[.24] min-w-full 1xl:items-start
+    1xl:-top-[140px] xl:-top-[187px] xl:max-w-none
+    xl:min-w-fit lg:-top-[163px] lg:max-w-[200%]
+    lg:min-w-0 md:max-w-[274%] md:-top-[105px]
 }
