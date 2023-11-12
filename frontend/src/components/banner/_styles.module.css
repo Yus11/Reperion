@@ -1,5 +1,5 @@
 .pages_banner {
-  @apply relative overflow-hidden bg-no-repeat
+  @apply relative overflow-hidden bg-white
   pb-[292px] -mt-[120px] -z-[1] pt-[284px]
   xl:pt-[176px] xl:pb-[160px] md:pb-20;
 }
