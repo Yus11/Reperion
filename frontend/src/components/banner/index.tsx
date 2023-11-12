@@ -15,8 +15,10 @@ export const Banner: FC<IBanner> = ({ title, subtitle }) => (
         {subtitle[0]} <span className="text-black">{subtitle[1]}</span>
       </span>
     </h1>
-    <video className={styles.video_bg} autoPlay muted loop>
-      <source src="/banner-secondary.mp4" type="video/mp4" />
-    </video>
+    <div className={styles.video_bg}>
+      <video autoPlay loop={true} muted={true} playsInline={true}>
+        <source src="/banner-secondary.mp4" type="video/mp4" />
+      </video>
+    </div>
   </section>
 )
